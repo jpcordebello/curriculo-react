@@ -10,7 +10,24 @@ function MapaProfissional() {
         {
             icone: <FaUserTie />,
             titulo: 'Perfil',
-            texto: 'João Paulo Cordebello'
+            texto: 'João Paulo Cordebello',
+            detalhes: [
+                {
+                    label: 'Email',
+                    texto: 'jp_cordebello@hotmail.com',
+                    link: 'mailto:jp_cordebello@hotmail.com'
+                },
+                {
+                    label: 'GitHub',
+                    texto: 'github.com/jpcordebello',
+                    link: 'https://github.com/jpcordebello'
+                },
+                {
+                    label: 'LinkedIn',
+                    texto: 'linkedin.com/in/jpcordebello',
+                    link: 'https://www.linkedin.com/in/jpcordebello'
+                }
+            ]
         },
         {
             icone: <FaDesktop />,
@@ -52,8 +69,27 @@ function MapaProfissional() {
                 {itensMapa.map((item, index) => (
                     <div key={index} className="mapa-card">
                         <div className="mapa-icone">{item.icone}</div>
+
                         <h3>{item.titulo}</h3>
+
                         <p>{item.texto}</p>
+
+                        {item.detalhes && (
+                            <ul className="mapa-lista-contato">
+                                {item.detalhes.map((detalhe, index) => (
+                                    <li key={index}>
+                                        <strong>{detalhe.label}:</strong>{' '}
+                                        <a
+                                            href={detalhe.link}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {detalhe.texto}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </div>
                 ))}
             </div>

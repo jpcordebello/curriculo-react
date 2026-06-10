@@ -461,3 +461,25 @@ section p {
     grid-template-columns: 1fr;
   }
 }
+.mapa-lista-contato {
+  margin: 12px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mapa-lista-contato li {
+  margin-bottom: 6px;
+  color: #c9c9d1;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.mapa-lista-contato a {
+  color: #7be495;
+  text-decoration: none;
+}
+
+.mapa-lista-contato a:hover {
+  text-decoration: underline;
+}
