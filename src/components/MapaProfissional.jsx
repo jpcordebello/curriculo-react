@@ -37,17 +37,17 @@ function MapaProfissional() {
         {
             icone: <HiOutlineAcademicCap />,
             titulo: 'Formação',
-            texto: 'Marketing, Contabilidade e Desenvolvimento'
+            texto: 'Marketing, Contabilidade e Desenvolvimento Full Stack'
         },
         {
             icone: <GrMoney />,
             titulo: 'Finanças',
-            texto: 'Controladoria, análise e processos'
+            texto: 'Controladoria, conciliação, dados e processos'
         },
         {
             icone: <LuBrain />,
             titulo: 'Competências',
-            texto: 'Aprendizado rápido e resolução de problemas'
+            texto: 'Aprendizado rápido, lógica e resolução de problemas'
         },
         {
             icone: <GiWorld />,
