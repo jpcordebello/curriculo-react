@@ -36,7 +36,14 @@ function Experiencias() {
             empresa: 'Editora Vozes',
             periodo: 'Novembro de 2010 - Abril de 2012',
             descricao:
-                'Atuação em lançamentos contábeis, classificação de contas, conciliação bancária, provisão de impostos, balancetes, apuração de resultados, demonstrações financeiras e declarações fiscais.'
+                'Atuação em lançamentos contábeis, classificação de contas, conciliação bancária, provisão de impostos, balancetes, apuração de resultados e demonstrações financeiras.'
+        },
+        {
+            cargo: 'Auxiliar de Escritório',
+            empresa: 'Contabilidade Pedro H Saurino',
+            periodo: 'Março de 2008 - Junho de 2010',
+            descricao:
+                'Lançamentos contábeis, classificação de contas,  provisão de impostos, balancetes, apuração de resultados, demonstrações financeiras e declarações fiscais ex.: IRPF, DIRF e IRPJ.'
         }
     ]
 
