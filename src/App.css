@@ -332,7 +332,23 @@ section p {
 .versao-ia h2 {
   color: #ffffff;
 }
+.botao-copiar {
+  margin-top: 18px;
+  padding: 12px 18px;
+  border: 1px solid #7be495;
+  border-radius: 999px;
+  background-color: transparent;
+  color: #7be495;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+}
 
+.botao-copiar:hover {
+  background-color: #7be495;
+  color: #1f202b;
+  transform: translateY(-2px);
+}
 .instrucao-ia {
   margin-top: 20px;
   padding: 18px;
