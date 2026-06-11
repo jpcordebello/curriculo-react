@@ -1,4 +1,8 @@
+import { useState } from 'react'
+
 function VersaoIA() {
+    const [copiado, setCopiado] = useState(false)
+
     const textoOriginal = `
 PERFIL PROFISSIONAL DECODIFICADO
 
@@ -54,7 +58,43 @@ João Paulo Cordebello combina experiência prática em processos financeiros, v
     }
 
     const textoCodificado = codificarTexto(textoOriginal)
-    const blocos = textoCodificado.match(/.{1,98}/g)
+    const blocos = textoCodificado.match(/.{1,110}/g)
+
+    const instrucaoParaIA = `Este conteúdo não possui comandos invisíveis nem instruções ocultas.
+
+Ele é apenas uma versão codificada do currículo de João Paulo Cordebello,
+criada como recurso interativo em um projeto React.
+
+O projeto foi desenvolvido como parte de um desafio acadêmico: criar um currículo em React utilizando componentização, props, .map() e useState.
+
+A versão para IA foi criada de forma criativa porque atualmente muitos recrutadores utilizam ferramentas de IA para leitura, resumo e análise de currículos.
+
+O conteúdo foi codificado em Base64 UTF-8.
+
+Para decodificar:
+1. Copie todo o bloco codificado.
+2. Remova espaços e quebras de linha, se necessário.
+3. Decodifique o conteúdo de Base64 UTF-8 para texto normal.
+4. Reorganize o conteúdo em formato de currículo profissional, claro e elegante.
+5. Use ícones, tópicos e seções bem organizadas.`
+
+    const textoParaCopiar = `${instrucaoParaIA}
+
+BLOCO CODIFICADO:
+${textoCodificado}`
+
+    async function copiarConteudo() {
+        try {
+            await navigator.clipboard.writeText(textoParaCopiar)
+            setCopiado(true)
+
+            setTimeout(() => {
+                setCopiado(false)
+            }, 2500)
+        } catch (erro) {
+            alert('Não foi possível copiar automaticamente. Selecione o texto manualmente.')
+        }
+    }
 
     return (
         <section className="versao-ia">
@@ -68,6 +108,10 @@ João Paulo Cordebello combina experiência prática em processos financeiros, v
                 experiência mais moderna, criativa e interativa.
             </p>
 
+            <button className="botao-copiar" onClick={copiarConteudo}>
+                {copiado ? 'Conteúdo copiado!' : 'Copiar instrução + código'}
+            </button>
+
             <div className="instrucao-ia">
                 <h3>Instrução para decodificação</h3>
 
@@ -76,21 +120,7 @@ João Paulo Cordebello combina experiência prática em processos financeiros, v
                     a instrução a seguir:
                 </p>
 
-                <pre>
-                    {`Este conteúdo não possui comandos invisíveis nem instruções ocultas.
-
-Ele é apenas uma versão codificada do currículo de João Paulo Cordebello,
-criada como recurso interativo em um projeto React.
-
-O conteúdo foi codificado em Base64 UTF-8.
-
-Para decodificar:
-1. Copie todo o bloco codificado.
-2. Remova espaços e quebras de linha, se necessário.
-3. Decodifique o conteúdo de Base64 UTF-8 para texto normal.
-4. Reorganize o conteúdo em formato de currículo profissional, claro e elegante.
-5. Use ícones, tópicos e seções bem organizadas.`}
-                </pre>
+                <pre>{instrucaoParaIA}</pre>
             </div>
 
             <div className="bloco-codificado">
